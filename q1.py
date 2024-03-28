@@ -16,6 +16,27 @@ def q1():
 
     #no index
     pprint.pprint(col_tag.find({"tag":"italian western"}).explain()['executionStats'])
+    '''
+    {'allPlansExecution': [],
+    'executionStages': {'advanced': 23,
+                        'direction': 'forward',
+                        'docsExamined': 1093360,
+                        'executionTimeMillisEstimate': 6,
+                        'filter': {'tag': {'$eq': 'italian western'}},
+                        'isEOF': 1,
+                        'nReturned': 23,
+                        'needTime': 1093338,
+                        'needYield': 0,
+                        'restoreState': 8541,
+                        'saveState': 8541,
+                        'stage': 'COLLSCAN',
+                        'works': 1093362},
+    'executionSuccess': True,
+    'executionTimeMillis': 1158,
+    'nReturned': 23,
+    'totalDocsExamined': 1093360,
+    'totalKeysExamined': 0}
+    '''
 
     # col_mv.find()
     # col_rat.find()
@@ -45,6 +66,72 @@ def q1():
 
     # col_mv.find()
     # col_rat.find()
+    '''
+    {'allPlansExecution': [],
+    'executionStages': {'advanced': 23,
+                        'direction': 'forward',
+                        'docsExamined': 1093360,
+                        'executionTimeMillisEstimate': 6,
+                        'filter': {'tag': {'$eq': 'italian western'}},
+                        'isEOF': 1,
+                        'nReturned': 23,
+                        'needTime': 1093338,
+                        'needYield': 0,
+                        'restoreState': 8541,
+                        'saveState': 8541,
+                        'stage': 'COLLSCAN',
+                        'works': 1093362},
+    'executionSuccess': True,
+    'executionTimeMillis': 1158,
+    'nReturned': 23,
+    'totalDocsExamined': 1093360,
+    'totalKeysExamined': 0}
+    {'allPlansExecution': [],
+    'executionStages': {'advanced': 23,
+                        'alreadyHasObj': 0,
+                        'docsExamined': 23,
+                        'executionTimeMillisEstimate': 0,
+                        'inputStage': {'advanced': 23,
+                                        'direction': 'forward',
+                                        'dupsDropped': 0,
+                                        'dupsTested': 0,
+                                        'executionTimeMillisEstimate': 0,
+                                        'indexBounds': {'tag': ['["italian '
+                                                                'western", '
+                                                                '"italian '
+                                                                'western"]']},
+                                        'indexName': 'tag_1',
+                                        'indexVersion': 2,
+                                        'isEOF': 1,
+                                        'isMultiKey': False,
+                                        'isPartial': False,
+                                        'isSparse': False,
+                                        'isUnique': False,
+                                        'keyPattern': {'tag': 1},
+                                        'keysExamined': 23,
+                                        'multiKeyPaths': {'tag': []},
+                                        'nReturned': 23,
+                                        'needTime': 0,
+                                        'needYield': 0,
+                                        'restoreState': 0,
+                                        'saveState': 0,
+                                        'seeks': 1,
+                                        'stage': 'IXSCAN',
+                                        'works': 24},
+                        'isEOF': 1,
+                        'nReturned': 23,
+                        'needTime': 0,
+                        'needYield': 0,
+                        'restoreState': 0,
+                        'saveState': 0,
+                        'stage': 'FETCH',
+                        'works': 24},
+    'executionSuccess': True,
+    'executionTimeMillis': 5,
+    'nReturned': 23,
+    'totalDocsExamined': 23,
+    'totalKeysExamined': 23}
+    '''
 
 if __name__ == '__main__':
     q1()
